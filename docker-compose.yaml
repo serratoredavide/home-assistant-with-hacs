@@ -13,14 +13,4 @@ services:
     # network_mode: host
     ports:
       - "8123:8123"
-    # networks:
-    #   my_network:
-    #     ipv4_address: 192.168.1.10  # Indirizzo IP statico assegnato al container
-
-# networks:
-#   my_network:
-#     driver: bridge  # Tipo di rete
-#     ipam:
-#       config:
-#         - subnet: 192.168.1.0/24  # Configura la subnet per la rete
 
