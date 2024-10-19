@@ -1,0 +1,26 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    command: "/start_with_hacs.sh"
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - ./start_with_hacs.sh:/start_with_hacs.sh
+      # - /run/dbus:/run/dbus:ro
+    restart: unless-stopped
+    # privileged: true
+    # network_mode: host
+    ports:
+      - "8123:8123"
+    # networks:
+    #   my_network:
+    #     ipv4_address: 192.168.1.10  # Indirizzo IP statico assegnato al container
+
+# networks:
+#   my_network:
+#     driver: bridge  # Tipo di rete
+#     ipam:
+#       config:
+#         - subnet: 192.168.1.0/24  # Configura la subnet per la rete
+
